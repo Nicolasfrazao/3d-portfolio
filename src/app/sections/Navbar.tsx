@@ -1,14 +1,19 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 import { navLinks } from '../constants/index';
 
+import Close from "@/assets/close.svg";
+import Menu from "@/assets/menu.svg";
+
 const NavItems = ({ onClick = () => {} }) => (
+
   <ul className="nav-ul">
     {navLinks.map((item) => (
       <li key={item.id} className="nav-li">
-        <a href={item.href} className="nav-li_a" onClick={onClick}>
+        <a href={item.href} className={`"nav-li_a"`} onClick={onClick}>
           {item.name}
         </a>
       </li>
@@ -32,9 +37,9 @@ const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
+            className="text-whit-400 hover:text-white focus:outline-none sm:hidden flex"
             aria-label="Toggle menu">
-            <img src={isOpen ? 'assets/close.svg' : 'assets/menu.svg'} alt="toggle" className="w-6 h-6" />
+            <Image src={isOpen ? Close : Menu} alt="toggle" className="w-6 h-6" width={10} height={10}/>
           </button>
 
           <nav className="sm:flex hidden">

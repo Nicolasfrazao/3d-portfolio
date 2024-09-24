@@ -5,10 +5,15 @@ import { useGSAP } from '@gsap/react';
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
+import Image from "next/image"
 
 import { myProjects } from '../constants/index';
 import CanvasLoader from '../components/Loading';
 import DemoComputer from '../components/DemoComputer';
+
+import RightArrow from "@/assets/right-arrow.png"
+import LeftArrow from "@/assets/left-arrow.png"
+import UpArrow from "@/assets/arrow-up.png"
 
 /**
  * The number of projects in the projects array
@@ -75,12 +80,12 @@ const Projects = () => {
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
-            <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
+          <div className="absolute top-0 right-0"> 
+            <Image src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" width={100} height={96} />
           </div>
 
           <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
-            <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
+            <Image className=" shadow-sm" src={currentProject.logo} alt="logo" height={10} width={10} />
           </div>
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
@@ -94,7 +99,7 @@ const Projects = () => {
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
-                  <img src={tag.path} alt={tag.name} />
+                  <Image src={tag.path} alt={tag.name} width={10} height={10}/>
                 </div>
               ))}
             </div>
@@ -105,17 +110,17 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer">
               <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
+              <Image src={UpArrow} alt="arrow" className="w-3 h-3" height={3} width={3}/>
             </a>
           </div>
 
           <div className="flex justify-between items-center mt-7">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="left arrow" />
+              <Image src={LeftArrow} alt="left arrow" className='w-4 h-4' height={4} width={4}/>
             </button>
 
             <button className="arrow-btn" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
+              <Image src={RightArrow} alt="right arrow" className="w-4 h-4" width={4} height={4} />
             </button>
           </div>
         </div>

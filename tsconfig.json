@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/HackerRoom.jsx", "src/app/components/Developer.jsx", "src/app/components/HeroCamera.jsx", "src/app/components/Loading.jsx", "src/app/components/ReactLogo.jsx", "src/app/components/Rings.jsx", "src/app/components/Target.jsx", "src/app/components/DemoComputer.jsx", "src/app/components/Cube.jsx", "src/app/components/Button.jsx", "src/app/components/Alert.jsx", "src/app/sections/Experience.tsx", "src/app/sections/Contact.jsx"],
   "exclude": ["node_modules"]
 }

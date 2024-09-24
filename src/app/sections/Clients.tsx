@@ -1,5 +1,7 @@
 import { clientReviews } from '../constants/index';
 
+import Star from "@/assets/star.png"
+
 import Image from 'next/image';
 
 const Clients = () => {
@@ -15,7 +17,7 @@ const Clients = () => {
 
               <div className="client-content">
                 <div className="flex gap-3">
-                  <img src={item.img} alt="reviewer"h-12 w-12 className=" rounded-full" />
+                  <Image src={item.img} alt="reviewer" className=" rounded-full" height={50} width={50} />
                   <div className="flex flex-col">
                     <p className="font-semibold text-white-800">{item.name}</p>
                     <p className="text-white-500 md:text-base text-sm font-light">{item.position}</p>
@@ -24,7 +26,7 @@ const Clients = () => {
 
                 <div className="flex self-end items-center gap-2">
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <Image key={index} src="/assets/star.png" alt="star" height={20} width={20} />
+                    <Image key={index} src={Star} alt="star" height={20} width={20} />
                   ))}
                 </div>
               </div>

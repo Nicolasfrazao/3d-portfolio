@@ -1,4 +1,4 @@
-const Button = ({ name, isBeam = false, containerClass } : { name: string, isBeam?: boolean, containerClass?: string }) => {
+const Button = ({ name, isBeam = false, containerClass }) => {
   return (
     <button className={`btn ${containerClass}`}>
       {isBeam && (

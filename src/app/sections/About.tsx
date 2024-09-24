@@ -7,6 +7,15 @@ import Image from 'next/image';
 
 import Button from '../components/Button';
 
+
+import Grid1 from "@/assets/grid1.png";
+import Grid2 from "@/assets/grid2.png";
+import Grid3 from "@/assets/grid3.png";
+import Grid4 from "@/assets/grid4.png"
+
+import Tick from "@/assets/tick.svg";
+import Copy from "@/assets/copy.svg";
+
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
@@ -24,10 +33,10 @@ const About = () => {
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
+            <Image src={Grid1} alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" width={276} height={276} />
 
             <div>
-              <p className="grid-headtext">Hi, I’m Nicolas Frazao</p>
+              <p className="grid-headtext">Hi, I&apos;m Nicolas Frazao</p>
               <p className="grid-subtext">
                 I have honed my skills in both frontend and backend dev, creating dynamic
                 and responsive websites.
@@ -38,7 +47,7 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
+            <Image src={Grid2} alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" height={276} width={200}/>
 
             <div>
               <p className="grid-headtext">Tech Stack</p>
@@ -57,7 +66,6 @@ const About = () => {
                 height={326}
                 width={326}
                 backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
                 showAtmosphere
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
@@ -66,8 +74,8 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Rjieka, Croatia and open to remote work worldwide.</p>
+              <p className="grid-headtext">I&apos;m very flexible with time zone communications & locations</p>
+              <p className="grid-subtext">I&apos;m based in Sorocaba, Brasil and open to remote work worldwide.</p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
@@ -75,7 +83,7 @@ const About = () => {
 
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+            <Image src={Grid3} alt="grid-3" width={266} height={266} className="w-full sm:h-[266px] h-fit object-contain" />
 
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
@@ -89,16 +97,18 @@ const About = () => {
 
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
-            <img
-              src="assets/grid4.png"
+            <Image
+              src={Grid4}
               alt="grid-4"
+              height={276}
+              width={276}
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
             />
 
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
+                <Image src={hasCopied ? Tick : Copy} alt="copy" />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">nicolas_frazao@hotmail.com</p>
               </div>
             </div>

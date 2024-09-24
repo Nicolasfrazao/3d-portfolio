@@ -3,9 +3,10 @@
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import Image from "next/image"
 
-import Developer from '../components/Developer';
-import CanvasLoader from '../components/Loading';
+import Developer from '../components/Developer.jsx';
+import CanvasLoader from '../components/Loading.jsx';
 import { workExperiences } from '../constants/index';
 
 const WorkExperience = () => {
@@ -41,7 +42,7 @@ const WorkExperience = () => {
                   className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
+                      <Image className="w-full h-full" src={item.icon} alt="" width={100} height={100} />
                     </div>
 
                     <div className="work-content_bar" />
